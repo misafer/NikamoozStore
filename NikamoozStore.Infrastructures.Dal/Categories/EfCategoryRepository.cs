@@ -1,10 +1,9 @@
 ﻿using NikamoozStore.Core.Contracts.Categories;
 using NikamoozStore.Core.Domain.Categories;
 using NikamoozStore.Infrastructures.Dal.Commons;
-using System;
+
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace NikamoozStore.Infrastructures.Dal.Categories
 {
@@ -16,6 +15,7 @@ namespace NikamoozStore.Infrastructures.Dal.Categories
         {
             _ctx = ctx;
         }
+
         public List<Category> GetAll()
         {
             return _ctx.Categories.ToList();

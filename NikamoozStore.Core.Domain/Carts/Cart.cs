@@ -1,8 +1,7 @@
 ﻿using NikamoozStore.Core.Domain.Products;
-using System;
+
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace NikamoozStore.Core.Domain.Carts
 {
@@ -28,15 +27,19 @@ namespace NikamoozStore.Core.Domain.Carts
                 line.Quantity += quantity;
             }
         }
+
         public virtual void RemoveLine(Product product)
         {
             lineCollection.RemoveAll(l => l.Product.ProductID == product.ProductID);
         }
+
         public virtual decimal ComputeTotalValue()
         {
             return lineCollection.Sum(e => e.Product.Price * e.Quantity);
         }
+
         public virtual void Clear() => lineCollection.Clear();
+
         public virtual IEnumerable<CartLine> Lines => lineCollection;
     }
 }

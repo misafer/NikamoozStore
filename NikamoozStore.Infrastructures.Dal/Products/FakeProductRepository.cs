@@ -1,11 +1,4 @@
-﻿using NikamoozStore.Core.Contracts.Products;
-using NikamoozStore.Core.Domain.Categories;
-using NikamoozStore.Core.Domain.Products;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace NikamoozStore.Infrastructures.Dal.Products
+﻿namespace NikamoozStore.Infrastructures.Dal.Products
 {
     //public class FakeProductRepository : ProductRepository
     //{

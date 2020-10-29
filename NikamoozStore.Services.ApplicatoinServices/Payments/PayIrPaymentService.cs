@@ -1,11 +1,12 @@
 ﻿using Microsoft.Extensions.Configuration;
+
 using Newtonsoft.Json;
+
 using NikamoozStore.Core.Contracts.Payments;
 using NikamoozStore.Core.Domain.Payments;
-using System;
+
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 
 namespace NikamoozStore.Services.ApplicatoinServices.Payments
 {
@@ -17,6 +18,7 @@ namespace NikamoozStore.Services.ApplicatoinServices.Payments
         {
             this.configuration = configuration;
         }
+
         public RequestPaymentResult RequestPayment(string amount, string mobile, string factorNumber, string description)
         {
             HttpClient client = new HttpClient();

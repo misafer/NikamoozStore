@@ -1,9 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
 using NikamoozStore.Core.Domain.Products;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace NikamoozStore.Infrastructures.Dal.Products
 {

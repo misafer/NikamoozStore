@@ -1,15 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
+
 using NikamoozStore.Core.Contracts.Orders;
 using NikamoozStore.Core.Domain.Orders;
 using NikamoozStore.Infrastructures.Dal.Commons;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace NikamoozStore.Infrastructures.Dal.Orders
 {
-    public class EfOrderRepository: OrderRepository
+    public class EfOrderRepository : OrderRepository
     {
         private readonly NikamoozStoreContext _ctx;
 
@@ -20,7 +21,7 @@ namespace NikamoozStore.Infrastructures.Dal.Orders
 
         public Order Find(int id)
         {
-            return _ctx.Orders.Include(c => c.Lines).ThenInclude(d=>d.Product).FirstOrDefault(c => c.OrderID == id);
+            return _ctx.Orders.Include(c => c.Lines).ThenInclude(d => d.Product).FirstOrDefault(c => c.OrderID == id);
         }
 
         public void SaveOrder(Order order)
@@ -45,9 +46,8 @@ namespace NikamoozStore.Infrastructures.Dal.Orders
                     Name = c.Name,
                     OrderID = c.OrderID,
                     PaymentId = c.PaymentId,
-                    TotalPrice = c.Lines.Sum(d=>d.Product.Price),
+                    TotalPrice = c.Lines.Sum(d => d.Product.Price),
                     PaymentDate = c.PaymentDate,
-                    
                 }).ToList();
             return orders;
         }
